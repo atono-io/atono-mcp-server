@@ -110,7 +110,7 @@ X_API_KEY = "YOUR_ATONO_API_KEY"
 
 **AI context (2)** `atono_get_ai_context · atono_update_ai_context`
 
-Full reference: [docs.atono.io/docs/atono-mcp-tools](docs.atono.io/docs/atono-mcp-tools)
+Full reference: [docs.atono.io/docs/atono-mcp-tools](https://docs.atono.io/docs/atono-mcp-tools)
 
 ## Agent cautions
 - **Always call** `atono_get_ai_context` before `atono_update_ai_context`.
@@ -138,7 +138,7 @@ state, not a bug — it's the most common surprise, so we'd rather say it here.
 | Product Knowledge (Glossary + AI Context) | 30-day trial | ✓ | ✓ |
 | Price | $0, up to 25 users | $19/user/mo | $39/user/mo |
 
-[atono.io/pricing](atono.io/pricing)
+[atono.io/pricing](https://atono.io/pricing)
 
 ## About Atono
 Atono is the product engineering platform that keeps product context connected 
