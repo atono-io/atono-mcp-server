@@ -18,9 +18,9 @@ Agents stop relearning your domain on every session.
 ## Quick start
 **Prerequisites**
 
-[Docker Desktop](https://www.docker.com/products/docker-desktop/) v27.0 or later, running in the background
-An Atono API key — workspace settings → Manage API keys
-An MCP-enabled tool
+1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) v27.0 or later, running in the background
+2. An Atono API key — workspace settings → Manage API keys
+3. An MCP-enabled tool
 
 ### Claude Code
 ```shell
