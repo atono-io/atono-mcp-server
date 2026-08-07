@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.atono/atono-mcp-server",
+  "title": "Atono",
+  "description": "Give your AI coding tools your team's product context: stories, bugs, epics, and glossary.",
+  "version": "1.0.0",
+  "websiteUrl": "https://atono.io",
+  "repository": {
+    "url": "https://github.com/atono-io/atono-mcp-server",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "docker.io/atonoio/atono-mcp-server:1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "X_API_KEY",
+          "description": "Atono API key. Create one in workspace settings under Manage API keys. Treat it as a password.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
