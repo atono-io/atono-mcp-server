@@ -3,7 +3,7 @@
   "name": "io.atono/atono-mcp-server",
   "title": "Atono",
   "description": "Give your AI coding tools your team's product context: stories, bugs, epics, and glossary.",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "websiteUrl": "https://atono.io",
   "repository": {
     "url": "https://github.com/atono-io/atono-mcp-server",
@@ -12,7 +12,7 @@
   "packages": [
     {
       "registryType": "oci",
-      "identifier": "docker.io/atonoio/atono-mcp-server:1.0.0",
+      "identifier": "docker.io/atonoio/atono-mcp-server:1.1.1",
       "transport": {
         "type": "stdio"
       },
