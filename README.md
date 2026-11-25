@@ -37,6 +37,7 @@ Settings → Connectors → Add custom connector → `https://mcp.atono.io/mcp`
 {
   "mcpServers": {
     "atono": {
+      "type": "http",
       "url": "https://mcp.atono.io/mcp"
     }
   }
@@ -169,27 +170,96 @@ X_API_KEY = "YOUR_ATONO_API_KEY"
 
 **Updates:** none required. `--pull=always` fetches the latest image on restart.
 
-## The 42 tools
+## Tools
 
-**Setup & context (5)** `atono_configuration · atono_list_users · atono_list_teams · atono_get_team_workflow · atono_get_glossary`
+42 tools. Full reference: [docs.atono.io/docs/atono-mcp-tools](https://docs.atono.io/docs/atono-mcp-tools)
 
-**Stories (10)** `atono_get_story · atono_list_story_personas · atono_create_story · atono_update_story_title · atono_update_story_content · atono_update_story_ac · atono_update_story_additional_content · atono_update_story_team · atono_update_story_step · atono_update_story_assignee`
+### Setup & context
 
-**Bugs (7)** `atono_list_environments · atono_get_bug · atono_create_bug · atono_update_bug · atono_update_bug_step · atono_update_bug_assignee · atono_document_bug_fix`
+| Tool                      | Description                                                        |
+| ------------------------- | ------------------------------------------------------------------ |
+| `atono_configuration`     | Verify the connection and return the workspace name and user count |
+| `atono_list_users`        | List workspace users, or the members of one team                   |
+| `atono_list_teams`        | List the teams in the workspace                                    |
+| `atono_get_team_workflow` | Get the workflow steps defined for a team                          |
+| `atono_get_glossary`      | Get the full product glossary (TSV)                                |
 
-**Epics (8)** `atono_list_epics · atono_create_epic · atono_get_epic · atono_update_epic_title · atono_update_epic_description · atono_update_epic_user_stories · atono_add_story_to_epic · atono_remove_story_from_epic`
+### Stories
 
-**Subtasks (4)** `atono_get_subtasks · atono_create_subtask · atono_update_subtask · atono_delete_subtask`
+| Tool                                    | Description                                                                 |
+| --------------------------------------- | --------------------------------------------------------------------------- |
+| `atono_get_story`                       | Get a story with its acceptance criteria, subtask summary, and feature flag |
+| `atono_list_story_personas`             | List the story personas defined in the workspace                            |
+| `atono_create_story`                    | Create a story with user stories, acceptance criteria, and optional team    |
+| `atono_update_story_title`              | Update a story's title                                                      |
+| `atono_update_story_content`            | Update a story's user story statements                                      |
+| `atono_update_story_ac`                 | Replace all acceptance criteria on a story                                  |
+| `atono_update_story_additional_content` | Replace a story's additional content                                        |
+| `atono_update_story_team`               | Assign a story to a team, or unassign it                                    |
+| `atono_update_story_step`               | Move a story to another workflow step within its team                       |
+| `atono_update_story_assignee`           | Assign a story to a user, or unassign it                                    |
 
-**Attachments (3)** `atono_upload_file_url · atono_create_attachment · atono_get_attachment`
+### Bugs
 
-**Timeboxes (2)** `atono_list_timeboxes · atono_list_timebox_items`
+| Tool                        | Description                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| `atono_list_environments`   | List the environments in the workspace                                       |
+| `atono_get_bug`             | Get a bug with its reproduction steps, behavior, and subtask summary         |
+| `atono_create_bug`          | Create a bug with summary, reproduction steps, and expected/actual behavior  |
+| `atono_update_bug`          | Update a bug's fields; list fields such as environments are replaced in full |
+| `atono_update_bug_step`     | Move a bug to another workflow step within its team                          |
+| `atono_update_bug_assignee` | Assign a bug to a user, or unassign it                                       |
+| `atono_document_bug_fix`    | Add a plain-English summary of a fix to the bottom of a bug's description    |
 
-**Linked items (1)** `atono_link_bugs_or_stories`
+### Linked items
 
-**AI context (2)** `atono_get_ai_context · atono_update_ai_context`
+| Tool                         | Description              |
+| ---------------------------- | ------------------------ |
+| `atono_link_bugs_or_stories` | Link two stories or bugs |
 
-Full reference: [docs.atono.io/docs/atono-mcp-tools](https://docs.atono.io/docs/atono-mcp-tools)
+### Subtasks
+
+| Tool                   | Description                                              |
+| ---------------------- | -------------------------------------------------------- |
+| `atono_get_subtasks`   | List the subtasks on a story or bug                      |
+| `atono_create_subtask` | Add a subtask to a story or bug                          |
+| `atono_update_subtask` | Update a subtask's title, description, assignee, or step |
+| `atono_delete_subtask` | Permanently delete a subtask from a story or bug         |
+
+### Epics
+
+| Tool                             | Description                                                 |
+| -------------------------------- | ----------------------------------------------------------- |
+| `atono_list_epics`               | List epics, optionally filtered by title keyword            |
+| `atono_create_epic`              | Create an epic with user story statements and a description |
+| `atono_get_epic`                 | Get an epic with its user stories and ordered child stories |
+| `atono_update_epic_title`        | Rename an epic (titles must be unique)                      |
+| `atono_update_epic_description`  | Replace an epic's description in full                       |
+| `atono_update_epic_user_stories` | Replace all user story statements on an epic                |
+| `atono_add_story_to_epic`        | Add a story to an epic, or move it from another epic        |
+| `atono_remove_story_from_epic`   | Remove a story from an epic                                 |
+
+### Attachments
+
+| Tool                      | Description                                        |
+| ------------------------- | -------------------------------------------------- |
+| `atono_upload_file_url`   | Get a URL for uploading a file to the staging area |
+| `atono_create_attachment` | Attach a staged file to a story or bug             |
+| `atono_get_attachment`    | Get an attachment's details and download URL       |
+
+### Timeboxes
+
+| Tool                       | Description                                 |
+| -------------------------- | ------------------------------------------- |
+| `atono_list_timeboxes`     | List timeboxes, optionally only active ones |
+| `atono_list_timebox_items` | List the stories and bugs in a timebox      |
+
+### AI context
+
+| Tool                      | Description                                                               |
+| ------------------------- | ------------------------------------------------------------------------- |
+| `atono_get_ai_context`    | Get an item's AI context (design, investigation, summary, or QA analysis) |
+| `atono_update_ai_context` | Create or replace an item's AI context resource                           |
 
 ## Agent cautions
 
