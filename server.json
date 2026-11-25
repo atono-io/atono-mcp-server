@@ -9,6 +9,7 @@
     "url": "https://github.com/atono-io/atono-mcp-server",
     "source": "github"
   },
+  "remotes": [{ "type": "streamable-http", "url": "https://mcp.atono.io/mcp" }],
   "packages": [
     {
       "registryType": "oci",
